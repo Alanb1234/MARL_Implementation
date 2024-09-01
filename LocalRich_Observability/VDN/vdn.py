@@ -164,16 +164,16 @@ class VDNAgent:
             opt.load_state_dict(checkpoint['optimizers_state_dict'][i])
         self.epsilon = checkpoint['epsilon']
 
-def train_vdn(num_episodes=8000, batch_size=32, update_freq=50, save_freq=500, 
-               epsilon_start=1.0, epsilon_min=0.01, epsilon_decay=0.999, 
+def train_vdn(num_episodes=3000, batch_size=32, update_freq=50, save_freq=100, 
+               epsilon_start=1.0, epsilon_min=0.01, epsilon_decay=0.9995, 
               decay_method='exponential'):
     
     env = MultiAgentGridEnv(
         grid_file='grid_world.json',
         coverage_radius=4,
-        max_steps_per_episode=100,
-        num_agents=6,
-        initial_positions=[(1, 1), (2, 1), (3, 1),(1, 2), (2, 2), (3, 2)]
+        max_steps_per_episode=50,
+        num_agents=4,
+        initial_positions=[(1,1), (2, 1), (1, 2),(2, 2)]
     )
 
 

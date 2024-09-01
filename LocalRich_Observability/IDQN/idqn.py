@@ -129,15 +129,15 @@ class IDQNAgent:
 
 #5000
 def train_idqn(num_episodes=8000, batch_size=32, update_freq=50, save_freq=500, 
-               epsilon_start=1.0, epsilon_min=0.01, epsilon_decay=0.9994, 
+               epsilon_start=1.0, epsilon_min=0.01, epsilon_decay=0.9995,  
                decay_method='exponential'):
     
     env = MultiAgentGridEnv(
         grid_file='grid_world.json',
         coverage_radius=4,
-        max_steps_per_episode=100,
-        num_agents=6,
-        initial_positions=[(1, 1), (2, 1), (3, 1),(1, 2), (2, 2), (3, 2)]
+        max_steps_per_episode=50,
+        num_agents=4,
+        initial_positions=[(25, 25), (26, 25), (25, 26),(26, 26)]
     )
 
     state_size = env.get_obs_size()

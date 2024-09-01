@@ -138,11 +138,13 @@ class MultiAgentGridEnv:
 
         reward = (
             self.total_area 
-            - (0.75) * self.overlap_penalty 
+            - (1) * self.overlap_penalty 
             - self.connectivity_penalty 
             - self.hole_penalty 
             - self.sensor_penalty  # Adjust the weight as needed
         )
+
+
         return reward
 
     def calculate_sensor_penalty(self):

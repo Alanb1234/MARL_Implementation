@@ -107,7 +107,7 @@ class GridWorldGUI:
 
 # Usage
 if __name__ == "__main__":
-    gui = GridWorldGUI(grid_width = 30, grid_height=30)
+    gui = GridWorldGUI(grid_width = 30, grid_height= 30)
     grid_world = gui.get_grid()
     gui.save_grid('grid_world.json')
     #print(grid_world)
